@@ -1,0 +1,75 @@
+function generate(){
+  $(".tweet").empty();
+  $(".share").empty();
+  var material = $("#material").val();
+  //まさかのべた書き
+  var ikehaya = [];
+  ikehaya.push("クリエイティブなぼくにとっては、ね。");
+  ikehaya.push("まだ東京で消耗してるの？");
+  ikehaya.push("今は、暮らしを自分でデザインできる時代なのですよ。");
+  ikehaya.push("会社やめりゃいいんですよｗ武士じゃあるまいし。");
+  ikehaya.push("おはようございます。本日は東京で消耗します。もう来ません。まだ東京で消耗してるの？");
+  ikehaya.push("というわけで、消耗しに向かってます。");
+  ikehaya.push("きっついおっさんが湧いてくる休日。");
+  ikehaya.push("おはようございます。土曜日っすね。まだ東京で消耗してるの？");
+  ikehaya.push("自分がどういう方向に変化していくのか、自分でもよくわからない。表現者であることは、だから面白い。");
+  ikehaya.push("僕の仕事はアート性が強いので、読者をガンガン裏切るつもりです。");
+  ikehaya.push("ファンです！と言ってくださる方から、なるべく早く嫌われたい。");
+  ikehaya.push("ひきこもり系ノマドワーカーという未来");
+  ikehaya.push("お前ら人のことを童貞だと思ってたら大間違いなんだからな！");
+  ikehaya.push("めんどくさい人はカジュアルブロックで！");
+  ikehaya.push("アートとしてのウェブサービス、というテーマを現代アートの領域に提示したい。");
+  ikehaya.push("展覧会キュレーションしたいなぁ。");
+  ikehaya.push("カジュアルに吐き気を催していた。");
+  ikehaya.push("ふんどしの輪が広がっていることを感じる。乗るしかない、このビッグウェーブに。");
+  ikehaya.push("燃えなれてる人間として、代理で燃えてあげたいレベル。");
+  ikehaya.push("こんにちは。お昼のニュースです。");
+  ikehaya.push("カジュアルにブロックで。");
+  ikehaya.push("食えなくなったらプロじゃない。僕も「プロ」ブロガー続けられるよう頑張ります...。");
+  ikehaya.push("僕レベルの「強者」ですら、「お前はいいけど、弱い人たちはどうするんだ」という視線を感じるんですよね。");
+  ikehaya.push("ぼくも前頭葉が大きいため、そろそろ前髪が厳しくなってきました。");
+  ikehaya.push("仕事はどこでもできる時代だし、なぜあえて東京で子育てするんだろ...。");
+  var links = [];
+  links.push("https://twitter.com/ihayato/status/828458029473357824");
+  links.push("https://twitter.com/ihayato");
+  links.push("https://twitter.com/IHayato/status/828458627333644288");
+  links.push("https://twitter.com/IHayato/status/828398096270831616");
+  links.push("https://twitter.com/IHayato/status/827995390607814656");
+  links.push("https://twitter.com/IHayato/status/827745715359141888");
+  links.push("https://twitter.com/IHayato/status/827744327078014976");
+  links.push("https://twitter.com/IHayato/status/827656746785239043");
+  links.push("https://twitter.com/IHayato/status/278462935330852864");
+  links.push("https://twitter.com/IHayato/status/275223441135792129");
+  links.push("https://twitter.com/IHayato/status/275223441135792129");
+  links.push("");
+  links.push("https://twitter.com/IHayato/status/267140875593859074");
+  links.push("https://twitter.com/IHayato/status/259184076265766912");
+  links.push("https://twitter.com/IHayato/status/258938228025987072");
+  links.push("https://twitter.com/IHayato/status/258938228025987072");
+  links.push("https://twitter.com/IHayato/status/255857962566963200");
+  links.push("https://twitter.com/IHayato/status/255456586263314432");
+  links.push("https://twitter.com/IHayato/status/203437142272262144");
+  links.push("https://twitter.com/IHayato/status/252958635280453634");
+  links.push("https://twitter.com/IHayato/status/246464052509933569");
+  links.push("https://twitter.com/IHayato/status/245350984845520897");
+  links.push("https://twitter.com/IHayato/status/240768706857271296");
+  links.push("http://www.ikedahayato.com/index.php/archives/27823");
+  links.push("https://twitter.com/IHayato/status/827324661302194177");
+  
+  var arrayLength = ikehaya.length;
+  var rand = Math.floor( Math.random() * arrayLength) ;
+  var tweet = material + "\n" + ikehaya[rand];
+  var source = '出典：　<a target="_blank" href="' + links[rand] + '">' + links[rand] + '</a>';
+  $(".tweet").append(tweet);
+  $(".source").append(source);
+  document.title = tweet + " / イケダハヤトジェネレーター http://bit.ly/2kSGU0H";
+  var tw = '<a href="https://twitter.com/share" class="twitter-share-button" data-related="ihayato">Tweet</a>';
+  tw += '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?';
+  tw += "'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
+  $(".share").append(tw);
+  $("#material").remove();
+  $(".buttons").empty();
+  var reloadButton = '<input type="button" onClick="location.reload()" class="btn btn-primary" value="もう一度生成する">'
+  $(".buttons").append(reloadButton);
+  $(".tweet").css("visibility", "visible");
+}
