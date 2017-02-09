@@ -30,3 +30,22 @@
 .source{
   margin-top: 20px;
 }
+
+.sbr{
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper{
+    width: 95%;
+  }
+  .tweet{
+    font-size: 20px;
+  }
+  .source{
+    font-size: 12px;
+  }
+  .sbr{
+    display: block;
+  }
+}
